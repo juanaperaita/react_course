@@ -36,7 +36,7 @@ function App() {
         onChange={handleInputChange}>
       </input>
       <div className="result">
-      {numberOfDays && selectedOption ? `${calculatePrice(Number(numberOfDays), selectedOption)} €` : "Please enter the number of days."}
+      {numberOfDays && selectedOption ? `${calculatePrice(Number(numberOfDays), selectedOption)} €` : ""}
       </div>
     </div>
   );
