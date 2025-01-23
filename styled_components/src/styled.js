@@ -1,12 +1,13 @@
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 
-export const MiBoton = styled.div`
+const medidaAncho=800;
 
-    width: 120px;
+const moviles=`@media(max-width:${medidaAncho}px)`;
+
+export const EstilosComunes= css`
+    width:720px;
     height: 50px;
     margin: 20px;
-    background-color: #007bff;
-    color: white;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -32,4 +33,23 @@ export const MiBoton = styled.div`
         transform: translateY(4px);
     }
 
-`;
+    ${moviles}{
+        width:50%;
+    }
+`
+
+export const MiBoton = styled.div`
+    ${({entrar}) => entrar?css`
+        ${EstilosComunes};
+        background-color: blue;
+        color: white;
+    `:`
+        ${EstilosComunes};
+        background-color: red;
+        color: black;
+
+
+    ${moviles}{
+        width:50%;
+    }
+    `}`
